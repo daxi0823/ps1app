@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+.btn {
+  color: blueviolet;
+}
+
+/* body header h1 {
+  color: tomato;
+} */
+header h1 {
+  color: violet;
+}
+h1 {
+  color: blue;
+}
+h1 {
+  color: red;
+}
+/* class名 + タグ名ぐらいはよく使う */
+.gnav a {
+  text-decoration: none;
+}
+/* !importantは最終手段、使わないよう */
+h1 {
+  color: brown !important;
+}
+
+
+

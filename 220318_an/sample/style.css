@@ -1,0 +1,292 @@
+@charset "UTF-8";
+
+html, body {
+  min-height: 100vh;
+}
+
+header {
+  background-color: rgb(255, 255, 255);
+  height: 100px;
+}
+main {
+  background-color: antiquewhite;
+  padding-bottom: 400px;
+}
+
+/* スマホサイズを基準にcssを組んでいく
+  →モバイルファースト */
+.container {
+  width: 100%;
+  /* border: solid 1px red; */
+  margin: 0 auto;
+}
+/* メディアクエリでレスポンシブ対応 */
+/* スマホ大、横向き 以上 */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    /* background-color: red; */
+  }
+}
+/* タブレット 以上 iPad基準 */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    /* background-color: blue; */
+  }
+}
+/* PC 以上 */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    /* background-color: green; */
+  }
+}
+/* PC大 以上 */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    /* background-color: purple; */
+  }
+}
+
+
+/* =============================
+  common style
+============================= */
+img {
+  /* 聞く！！！ */
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+/* ulのちょぼ「・」は一生不要なので共通で消しておく */
+ul {
+  list-style: none;
+}
+.ttl {
+  text-align: center;
+  padding-top: 4em;
+  margin-bottom:2em;
+}
+
+
+
+/* メディアクエリ */
+/* スマホ大、横向き 以上 */
+@media (min-width: 576px) {
+
+}
+/* タブレット 以上 iPad基準 */
+@media (min-width: 768px) {
+
+}
+/* PC 以上 */
+@media (min-width: 992px) {
+
+}
+/* PC大 以上 */
+@media (min-width: 1200px) {
+
+}
+
+
+/* =============================
+  Header
+============================= */
+/*  */
+header {
+  width: 100%;
+  /* position: fixed; でヘッダー固定すると浮く
+  結果、写真の全面表示が可能になる */
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  /*  */
+  align-items: center;
+  padding: 20px 0;
+}
+header .logo {
+  width: 220px;
+}
+
+#gnav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+
+/* =============================
+  main contents
+============================= */
+
+.main_img {
+  /* ・を消しておく */
+  list-style: none;
+  /* display: flex; */
+}
+.main_img img {
+  width: 100%;
+}
+
+/* メディアクエリ */
+/* スマホ大、横向き 以上 */
+@media (min-width: 576px) {
+
+}
+/* タブレット 以上 iPad基準 */
+@media (min-width: 768px) {
+  .main_img {
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .main_img li {
+    width: 50%;
+  }
+}
+/* PC 以上 */
+@media (min-width: 992px) {
+  .main_img li {
+    width: 25%;
+  }
+}
+/* PC大 以上 */
+@media (min-width: 1200px) {
+}
+
+#mv {
+  /* メインビジュアルの全画面表示 */
+  height: 100vh;
+  background: url(./images/menu1.jpg) no-repeat;
+  background-size: cover;
+  background-position: right bottom;
+  /* copy_wrapperを中心に置く */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    /* 横方向の中心 */
+  text-align: center;
+}
+
+.copy_wrapper {
+  font-family: 'Philosopher', sans-serif;
+  background-color: rgba(17, 16, 16, 0.2);
+  padding: 20px;
+  color: rgba(240, 255, 255, 0.9);
+  font-size: 28px;
+}
+
+/* =============================
+  desc
+============================= */
+
+
+/* メディアクエリ */
+.desc_left img {
+  width: 100%;
+}
+.desc_right p {
+  padding: 10px 0 0px;
+}
+/* スマホ大、横向き 以上 */
+@media (min-width: 576px) {
+
+}
+/* タブレット 以上 iPad基準 */
+@media (min-width: 768px) {
+  .desc_wrapper {
+    display: flex;
+  }
+  .desc_wrapper_reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .desc_left {
+    width: 40%;
+  }
+
+  .desc_right {
+    width: 60%;
+    padding: 1em;
+  }
+  
+}
+/* PC 以上 */
+@media (min-width: 992px) {
+
+}
+/* PC大 以上 */
+@media (min-width: 1200px) {
+
+}
+
+
+/* =============================
+  footer_top
+============================= */
+#footer_top {
+  background-color: #eee;
+}
+
+/* =============================
+  footer
+============================= */
+footer {
+  background-color: #ccc;
+  /* height: 200px; */
+  padding: 60px o;
+}
+footer_.container {
+
+}
+.footer_address {
+
+}
+
+/* メディアクエリ */
+.footer_sns {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+.footer_sns li {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  background-color: #eee;
+  /* 正方形に対してborder-radius:50%; で円作成 */
+  border-radius: 50%;
+}
+.footer_sns svg {
+  width: 100%;
+  height: auto;
+}
+
+
+/* スマホ大、横向き 以上 */
+@media (min-width: 576px) {
+
+}
+/* タブレット 以上 iPad基準 */
+@media (min-width: 768px) {
+  footer .container {
+    
+  }
+}
+/* PC 以上 */
+@media (min-width: 992px) {
+
+}
+/* PC大 以上 */
+@media (min-width: 1200px) {
+
+}
+
+
+

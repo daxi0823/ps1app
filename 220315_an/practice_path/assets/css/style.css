@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+body {
+  background-color: antiquewhite;
+}
+#contact header {
+  background-color: rgb(201, 231, 89);
+}
+
+img {
+  /* 画像を親要素以上に拡大をしない */
+  max-width: 100%;
+  height: auto;
+  /* 上下の揃えを設定　これは、上に合わせて設定 */
+  vertical-align: top;
+}
+ul {
+  list-style: none;
+  gap: 2%;
+}
+
+.img_list {
+  /* 項目を横並びにする */
+  display: flex;
+  /*オーバーする項目は段を変える */
+  flex-wrap: wrap;
+}
+.img_list li {
+  /* flexを指定しても、横幅指定がないと幅が自由に変わって結局横並びになる */
+  width: 49%;
+}
+#contact .img_list li {
+  width: 32%;
+} 
+
+.img_list li img {
+  /* 高さを100%にすることで、親要素に対して100%をとる */
+  height: 100%;
+  /* 画像を引き伸ばすことになり、オーバーするので、その部分をトリミング */
+  object-fit: cover;
+}
+
+/* ====================
+header
+====================*/
+/*  */
+header .container {
+  display: flex;
+  /* ヘッダーのロゴと、ナビゲーションを左右に分ける */
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+#gnav ul {
+  display: flex;
+  gap: 20px;
+}
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>じゃんけん</title>
+  <script src="janken.js"></script>
+  <script src="janken02.js"></script>
+</head>
+<body>
+  <!-- input:r[value]*3 -->
+  <label for=""><input type="radio" name="hand" id="" value="0" checked>グー</label>
+  <label for=""><input type="radio" name="hand" id="" value="1">チョキ</label>
+  <label for=""><input type="radio" name="hand" id="" value="2">パー</label>
+  <br>
+  <p id="disp1">コンピュータの手は？</p>
+  <p id="disp2">ここに結果が表示されます</p>
+  <button onclick="janken()">ジャンケン</button>
+</body>
+</html>

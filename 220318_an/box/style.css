@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  /* padding 内側の余白 */
+  padding: 60px;
+  /* margin 外側の余白 */
+  margin: 40px auto;
+  border: solid 10px #f00;
+  background-color: #333;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.box2 {
+  margin-top: 20px;
+}

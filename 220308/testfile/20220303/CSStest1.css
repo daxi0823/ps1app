@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+p#s1{
+  font-family:sans-serif;
+}
+p#s2{
+  font-family:serif;
+  color: rgba(255, 0, 0, 0.5)
+
+
+}
+p#s3{
+  font-size:24pt;
+  font-weight:900;
+  font-style:italic;
+}

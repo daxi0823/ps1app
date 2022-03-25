@@ -1,0 +1,361 @@
+@charset "UTF-8";
+
+/*=========================
+  base
+=========================*/
+html {
+ /* 1rem = 10px */
+  font-size: 62.5%;
+  /* スムーススクロール scroll-behavior */
+  scroll-behavior: smooth;
+}
+
+/* スマホ大 or 横向き〜 */
+@media (min-width: 576px) {
+}
+/* タブレット〜 */
+@media (min-width: 768px) {
+  /* タブレット以上で、文字サイズが大きくなる */
+  html { 
+    font-size: 87.5%;
+  }
+}
+/* PC〜 */
+@media (min-width: 992px) {
+}
+/* PC大〜 */
+@media (min-width: 1200px) {
+}
+
+/*=========================
+  Layout
+=========================*/
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+/*スマホ大、横向き〜 */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+/*　タブレット 〜 */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+/*　PC 〜 */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+/*　PC大 〜 */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/*=========================
+  common style
+=========================*/
+* {
+  font-size: 1.4rem;
+}
+
+a {
+  color: #3a1301;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+ul {
+  list-style: none;
+}
+.ttl {
+  font-size: 3.2rem;
+  text-align: center;
+  padding-top: 4em;
+  margin-bottom: 2em;
+}
+/*=========================
+  Header
+=========================*/
+header {
+  width: 100%;
+  position: fixed;
+  background: rgba(253, 249, 243, 0.7);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+.logo {
+  width: 220px;
+}
+#gnav ul {
+  display: flex;
+  gap: 30px;
+}
+
+/*=========================
+  Footer
+=========================*/
+footer {
+  background-color: #e09574;
+  padding: 60px 0;
+  color: #FFF;
+}
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__sns {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+.footer__sns li {
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  background-color: #EEE;
+  border-radius: 50%;
+}
+.footer__sns svg {
+  width: 100%;
+  height: auto;
+  fill: #666;
+}
+.footer_address {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+  footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+/*=========================
+  main contents
+=========================*/
+main {
+  padding-bottom: 400px;
+  background-color: rgb(253, 249, 243);
+}
+
+#mv {
+  height: 100vh;
+  background: url(./images/menu10.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.mv__ttl {
+  width: 100%;
+  /* viewport-width */
+  /* font-size: 7.03vw; */
+  /* MFでサイズを指定しmin(前半)、後半はタブレット等用のmaxサイズ*/
+  font-size: min(11.03vw, 64px);
+  font-family: 'Philosopher', sans-serif;
+  margin-bottom: 10px;
+}
+.mv__txt {
+  font-size: 18px;
+}
+.copy__wrapper {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 120px 40px;
+  border-radius: 46% 34% 68% 52%;
+  /* border-radius: 9999999px; */
+}
+.main__img {
+  /* flex-direction: row; */
+  display: flex;
+  flex-wrap: column;
+  flex-wrap: wrap;
+  gap: 30px;
+  /* align-items: stretch; 通常これえが効いているので、勝手に揃う */
+}
+.main__img li {
+  border: solid 1px #ccc;
+  /* これだけでは、写真が切り取られない */
+  border-radius: 20px;
+  overflow: hidden;
+}
+/* クリッカブルということをしめすために、hoverで透過 */
+.main__img li:hover {
+  opacity: 0.8;
+  transform: rotate(1deg);
+}
+.main__img img {
+  width: 100%;
+}
+.menu__inner {
+  padding: 30px;
+}
+
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+  .main__img {
+    /* flex-direction: row; */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main__img li {
+    /* width: 50%; */
+    width: calc((100% - 30px) / 2);
+  }
+}
+@media (min-width: 992px) {
+  .main__img li {
+    /* width: 33.3%; */
+    width: calc((100% - 60px) / 3);
+  }
+}
+
+/*=========================
+  desc
+=========================*/
+.desc__left img {
+  width: 100%;
+}
+.desc__right p {
+  font-size: 1.4rem;
+  padding: 10px 0 40px;
+}
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+  .desc__wrapper {
+    display: flex;
+    margin-bottom: 60px;
+  }
+  .desc__wrapper_reverse {
+    flex-direction: row-reverse;
+  }
+  .desc__left {
+    width: 40%;
+  }
+  .desc__right {
+    width: 60%;
+    padding: 2em;
+  }
+}
+
+/*=========================
+  footer__top
+=========================*/
+
+/*=========================
+  accordion
+=========================*/
+/*  */
+
+
+/* アコーディオン作成していくが、まずは開いた状態で作っていく */
+.tab__label {
+  /* inputタグだけではinline要素になりズレるので、block要素に変更 */
+  display: block;
+  cursor: pointer;
+  background-color: #ccc;
+  padding: 10px 0.5em;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+}
+/* .tab__label のbefore */
+.tab__label::before {
+  /* 擬似要素にはcontentがほぼ必須 */
+  content: '▼';
+  margin-right: 0.2em;
+  display: inline-block;
+  transform: rotate(-90deg);
+}
+.trigger:checked+.tab__label::before {
+  transform: rotate(0);
+}
+
+/* hoverされたもの、activeなもの両方に同じcss適用 */
+.tab__label:hover, .trigger:checked+.tab__label{
+  background-color: deepskyblue;
+}
+
+.contents {
+  padding: 0 30px;
+  /* border: solid 1px rgba(0, 0, 0, 0.2); */
+  height: 0;
+  /* 枠からはみ出たものを隠す */
+  overflow: hidden;
+  opacity: 0;
+}
+
+/*  */
+.trigger:checked+.tab__label+.contents {
+  height: auto;
+  overflow: auto;
+  opacity: 1;
+  padding: 30px;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  transition: 0.8s ease;
+}
+.trigger {
+  display: none;
+}
+
+
+/*=========================
+  table
+=========================*/
+.tbl__wrapper {
+  /* 隠れた部分を、横スクロールバーで見せる */
+  overflow: auto;
+}
+.tbl__01 {
+  /* width: 100%; */
+  width: 1400px;
+  /* 通常のテーブルはブラウザ等によって枠のサイズが変わる
+  table-layout: fixed;で各枠は均等にできる */
+  /* table-layout: fixed; */
+  /* border-collapse: collapse;必須。入れないと、2重枠になる と思いきや、、 */
+  border-collapse: collapse;
+  /*  */
+  /* border-collapse: separate;
+  border-spacing: 0; */
+}
+.tbl__01 th, .tbl__01 td {
+  border: solid 1px #ccc;
+  /* tableはpaddingのみ、margin等は不可 */
+  padding: 15px;
+  vertical-align: top;
+}
+.tbl__01 th {
+  /* 見出し行（左）を固定 position: sticky; left: 0; */
+  position: sticky;
+  left: 0;
+  background-color: azure;
+}
+
+/* @media (max-width: 767px) {
+  .tbl__01, .tbl__01 tbody, .tbl__01 th, .tbl__01 td, .tbl__01 tr {
+    display: block;
+    width: 100%;
+  }
+} */

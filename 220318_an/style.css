@@ -1,0 +1,34 @@
+@charset "UTF-8";
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 50px;
+
+}
+.blk {
+  background-color: aqua;
+  margin-bottom: 10px;
+  width: 400px;
+  height: 30px;
+}
+a {
+  /* インライン要素に対して、display:blockでブロック要素化
+  今後利用する際は、最初から指定してしまうことが多い */
+  display: inline-block;
+  background-color: aqua;
+  margin-bottom: 10px;
+  width: 400px;
+  height: 30px;
+}
+
+span {
+  display: inline-block;
+  background-color: aqua;
+  margin-bottom: 10px;
+  /* width: 400px;
+  height: 30px; */
+}
+
+.test {
+  font-size: 32px;
+}
