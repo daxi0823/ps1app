@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janken</title>
+</head>
+<script src="janken.js"></script>
+<body>
+  <h2>janken review</h2>
+  <input type="radio" name="playerhand" id="g" value="0"><label for="g">✊</label>
+  <input type="radio" name="playerhand" id="c" value="1"><label for="c">✌️</label>
+  <input type="radio" name="playerhand" id="p" value="2"><label for="p">🖐</label>
+
+  <!-- JS起動条件はonclick -->
+  <input type="button" onclick="janken()" value="ボタン" id="">
+  <p id="disp">結果は？</p>
+</body>
+</html>
