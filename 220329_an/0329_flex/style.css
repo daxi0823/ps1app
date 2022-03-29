@@ -30,6 +30,7 @@ html {
   /* gap:枠の内側だけに、margin設定 */
   gap: 10px;
 }
+/* CSSセレクタのチートシート */
 .wrapper > * {
   padding: 40px;
 }
@@ -46,7 +47,7 @@ header {
 
 }
 
-.wrapper > main {
+.wrapper main {
   padding: 0;
   /* 全体のwrapperにdisplay:flexl;をしたのち、
   メイン部分にflex:1;で勝手に100%になる */
