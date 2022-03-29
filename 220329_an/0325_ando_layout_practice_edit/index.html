@@ -11,21 +11,30 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <!-- <header>
+  <header>
     <div class="container">
       <h2 class="logo"><a href="./index.html"><img src="./images/logo.png" alt="Cafe Du Ando" width="800" height="205"></a></h2>
-      <nav id="gnav">
-        <ul>
-          <li><a href="#posi">Positon</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#desc">About</a></li>
-          <li><a href="#accordion">Accordion</a></li>
-          <li><a href="#table">Table</a></li>
-          <li><a href="#footer__top">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="gnav__wrapper">
+        <input type="checkbox" name="" id="nav__input" class="nav__hidden">
+        <label for="nav__input" id="menu__btn" class="hamburger__menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav id="gnav">
+          <ul>
+            <li><a href="#posi">Positon</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#desc">About</a></li>
+            <li><a href="#accordion">Accordion</a></li>
+            <li><a href="#table">Table</a></li>
+            <li><a href="#footer__top">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /.gnav__wrapper -->
     </div>
-  </header> -->
+  </header>
   <main>
     <section id="mv">
       <div class="copy__wrapper">
@@ -33,7 +42,7 @@
         <p class="mv__txt">大山の天然水で淹れるコーヒーをお楽しみください！</p>
       </div>
     </section><!--mv-->
-    <header>
+    <!-- <header>
       <div class="container">
         <h2 class="logo"><a href="./index.html"><img src="./images/logo.png" alt="Cafe Du Ando" width="800" height="205"></a></h2>
         <nav id="gnav">
@@ -47,7 +56,7 @@
           </ul>
         </nav>
       </div>
-    </header>
+    </header> -->
     <section id="posi">
       <h2 class="ttl">Position</h2>
       <div class="container">
@@ -163,7 +172,45 @@
     </section>
     <section id="footer__top">
       <h2 class="ttl">Contact</h2>
-    </section><!--desc-->
+      <div class="container">
+        <div class="form__wrapper">
+          <form action="">
+              <div class="input__box">
+                <input type="text" placeholder="氏名" required>
+                <!-- <input type="file" name="" id="">
+                <input type="password" name="" id="" placeholder="パスワード">
+                <input type="time" name="" id="">
+                <input type="date" name="" id=""> -->
+              </div>
+              <!-- /.input__box -->
+              <div class="input__box">
+                <input type="radio" id="gender1" name="gender" value="man"><label for="gender1" class="dsp__inlineblock">男</label>
+                <input type="radio" id="gender2" name="gender" value="woman"><label for="gender2" class="dsp__inlineblock">女</label>
+              </div>
+              <!-- /.input__box -->
+              <div class="input__box">
+                <label for="tel">携帯電話</label>
+                <input type="tel" name="" id="tel" placeholder="090xxxxxx" pattern="\d{2,4}?\d{2,4}?\d{3,4}" />
+              </div>
+              <div class="input__box">
+                <label for="mail" class="dsp__inlineblock">メールアドレス</label>
+                <input type="text" name="" id="tel" placeholder="ando@gmail.com">
+              </div>
+              <div class="input__box">
+                <textarea name="biko" id="" cols="30" rows="10" placeholder="備考"></textarea>
+              </div>
+              <div class="input__box">
+                <input type="checkbox" name="" id="agreement"><label for="agreement" class="dsp__inlineblock">同意する</label>
+              </div>
+              <div class="input__box">
+                <input type="submit" value="送信" required>
+              </div>
+          </form>
+        </div>
+        <!-- /.form__wrapper -->
+      </div>
+
+    </section><!--footer__top-->
   </main>
   <footer>
     <div class="container">

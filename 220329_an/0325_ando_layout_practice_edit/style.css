@@ -30,6 +30,7 @@ html {
 .container {
   width: 100%;
   margin: 0 auto;
+  padding: 0 4%;
 }
 /*スマホ大、横向き〜 */
 @media (min-width: 576px) {
@@ -65,6 +66,8 @@ html {
 a {
   color: #3a1301;
   text-decoration: none;
+  /* スマホ対応で最初に入れる */
+  display: block;
 }
 img {
   max-width: 100%;
@@ -86,7 +89,8 @@ ul {
 header {
   width: 100%;
   position: fixed;
-  position: sticky;
+  /* position: sticky; */
+  z-index: 10;
   /* bottom: 0; */
   top: 0;
   left: 0;
@@ -96,15 +100,158 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .logo {
   width: 220px;
 }
+
+#gnav {
+  /* display: none; */
+  position: absolute;
+  /* あくまで画面サイズ分上に置いているので
+  画面サイズが小さくなってメニュー幅の高さの方が大きい場合
+  はみ出てくる場合がある */
+  top: -100vh;
+  left: 0;
+  width: 100vw;
+  background-color: rgba(58, 19, 1, 0.7);
+  /* ヘッダー分下げる */
+  padding-top: 80px;
+  /* クリック前は欄外に飛ばしてある */
+  /* ただし、transformでは、画面サイズしている間に、出てきてしまう */
+  /* transform: translateX(-100vw); *
+
+  /* 変化するものは、全て1秒で変化 */
+  transition: all 0.7s;
+}
+#nav__input:checked ~ #gnav {
+  /* ~同じ親を持つ（階層一緒） */
+  /*  */
+  /* transform: translateX(0); */
+  top: 0;
+}
+
+
 #gnav ul {
   display: flex;
-  gap: 30px;
+  /* ハンバーガーメニュー内は縦なので */
+  flex-direction: column;
 }
+#gnav li {
+  border-top: solid 1px #FFF;
+  padding: 20px;
+}
+#gnav a {
+  color: #fff;
+  padding: 20ox;
+  text-align: center;
+}
+#gnav a:hover {
+  background-color: #3a1301;
+}
+@media (min-width: 992px) {
+  #gnav {
+    /* display: none; */
+    /* メディアクエリ切るときは、元で書いた分を全て書いて、
+    反転させていく */
+    transition: none;
+    transform: none;
+    position: initial;
+    top: auto;
+    left: auto;
+    width: auto;
+    background-color: transparent;
+    padding-top: 0;
+  }
+  #gnav ul {
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+  }
+  #gnav li {
+    border: none;
+  }
+  #gnav a {
+    padding: 0;
+    color: #3a1301;
+  }
+  #gnav a:hover {
+    background-color: transparent;
+    color: rgba(58, 19, 1, 0.7);
+    text-decoration: underline;
+  }
+
+}
+
+
+/* ハンバーガーメニュー */
+.nav__hidden {
+  /* チェックボックスで動作を認識させるので、不要な要素を隠す */
+  display: none;
+}
+.hamburger__menu, .hamburger__menu span {
+  /* いじるためにinline-block */
+  display: inline-block;
+}
+.hamburger__menu {
+  /* display: none; */
+  position: relative;
+  z-index: 10;
+  width: 40px;
+  height: 18px;
+  cursor: pointer;
+}
+.hamburger__menu:hover {
+
+}
+.hamburger__menu span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #3a1301;
+  transition: all 0.4s;
+}
+
+.hamburger__menu span:nth-of-type(1) {
+  top: 0;
+
+}
+.hamburger__menu span:nth-of-type(2) {
+  top: 8px;
+  
+}
+.hamburger__menu span:nth-of-type(3) {
+  top: 16px;
+}
+
+/* #nav__input:checkedのときの
+ */
+#nav__input:checked ~ .hamburger__menu span {
+  background-color: #fff;
+}
+
+#nav__input:checked ~ .hamburger__menu span:nth-of-type(1) {
+  /* translateY */
+  transform: translateY(8px) rotate(-45deg);
+}
+#nav__input:checked ~ .hamburger__menu span:nth-of-type(2) {
+  display: none;
+}
+#nav__input:checked ~ .hamburger__menu span:nth-of-type(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
+
+  @media (min-width: 992px) {
+    .hamburger__menu {
+      display: none;
+    }
+  
+}
+
+
 
 /*=========================
   Footer
@@ -159,8 +306,9 @@ main {
 }
 #mv {
   position: relative;
-  /* height: 100vh; */
-  height: calc(100vh - 86px);
+  height: 100vh;
+  /* メニューを下に入れるために、計算で高さを指定 */
+  /* height: calc(100vh - 86px); */
   background: url(./images/menu10.jpg) no-repeat;
   background-size: cover;
   background-position: center;
@@ -170,8 +318,8 @@ main {
   text-align: center;
   /* margin-bottom: 60px; */
 }
-#mv::after {
-  position: absolute;
+/* #mv::after { */
+  /* position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -179,8 +327,8 @@ main {
   content: "";
   display: block;
   background: linear-gradient(#c9ffbf, #ffafbd);
-  mix-blend-mode: color;
-}
+  mix-blend-mode: color; */
+/* } */
 .mv__ttl {
   width: 100%;
   /* font-size: 54px; */
@@ -357,6 +505,9 @@ main {
 =========================*/
 #posi {
   background-color: #feffdb;
+  /* position: relative;はなぜ？ */
+  position: relative;
+  z-index: 1;
 }
 
 .posi__box__wrapper {
@@ -428,3 +579,38 @@ main {
   background-color: rgb(23, 243, 170);
   border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
 }
+
+/*=========================
+  Form
+=========================*/
+.form__wrapper {
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.input__box {
+  /* このへんのmargin重要 */
+  margin: 20px 0;
+}
+
+input[type="text"], input[type="tel"], input[type="mail"], textarea {
+  /* ブラウザ標準のスタイルをリセット */
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 16px;
+  width: 100%;
+  border: solid 1px #CCC;
+  padding: 0.8em 1.5em;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+label {
+  display: block;
+}
+
+.dsp__inlineblock {
+  display: inline-block;
+  
+}
+
