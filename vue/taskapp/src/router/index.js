@@ -2,7 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Link from '../views/LinkView.vue'
+// import後の名称はなんでもOKだが、下のroutesではその名称を用いる
 import Login from '../views/LoginView.vue'
+import Task from '../views/TaskView.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +26,12 @@ const routes = [
     name: 'login',
     // 
     component: Login
+  },
+  {
+    path: '/task',
+    name: 'task',
+    // 
+    component: Task
   },
   {
     path: '/about',
