@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- CDNでの読み込み、vue -->
+</head>
+<body>
+  <!-- vueを「マウントする」vueの世界にする -->
+  <div id="app">
+      <!-- <p>{{ message }}</p> -->
+
+  </div><!-- /#app -->
+
+  <script>
+    let vm = new Vue({
+      // el: '#app',
+      data: {
+        message: 'Hello, World!',
+      },
+      template: '<p>{{ message }}</p>'
+      // vueのobject内で、templateオプションで書き込むことも可能だが見づらい
+      // これをより直感的にしたのが、vue cliのtemplateタグ（vueの対処にくるやつ）
+    }).$mount('#app')
+// こんな書き方もできる、vue cliはこんな感じ
+
+
+
+  </script>
+
+</body>
+</html>

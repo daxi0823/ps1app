@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- CDNでの読み込み、vue -->
+</head>
+<body>
+  <!-- vueを「マウントする」vueの世界にする -->
+  <div id="app">
+      <!-- <p>{{ message }}</p>
+      <p>{{ name }}</p>
+      ""内で"は使えない ''を使う
+      <button @click="name = 'Koji' ">変更</button> -->
+
+  </div><!-- /#app -->
+
+  <script>
+    new Vue({
+      // el: '#app',
+      data: {
+        message: 'Hello, World!',
+        name: 'Ando'
+      },
+      render(h) {
+        console.log(h('p', 'Koji' + this.name))
+        return h('p', 'Koji' + this.name)
+      }
+    }).$mount('#app')
+
+console.dir(document);
+
+  </script>
+
+</body>
+</html>

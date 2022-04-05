@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- CDNでの読み込み、vue -->
+</head>
+<body>
+  <!-- vueを「マウントする」vueの世界にする -->
+  <div id="app">
+      <p>{{ message }}</p>
+      <!-- マスタッシュ構文内で計算可能 -->
+      <p>{{ number * 5 }}</p>
+      <!-- 三項演算子：条件 ? 'trueの場合' : 'falsenの場合' -->
+      <p>{{ active ? 'オン' : 'オフ' }}</p>
+      <p>{{ sayHello() }} JSの単一式も書けるよ</p>
+  </div>
+  <!-- /#app -->
+  <script>
+    new Vue({
+      // el：element マウントする場所を指定
+      // 
+      el: '#app',
+        // 
+      data: {
+        message: 'Hello, World!',
+        number: 5,
+        active: false,
+      },
+      // methodとは、objectの中にあるfunction
+      // sayHello function() {}という書き方もある（古い）
+      methods: {
+        sayHello() {
+          return 'Hello!';
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>
