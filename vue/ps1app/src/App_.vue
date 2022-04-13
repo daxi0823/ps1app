@@ -39,6 +39,7 @@ export default {
   },
   computed: {
     gameSearchResult() {
+      // filterをかましているからindexOfで表示可能
       let result = this.datas.filter((item) => {
         if(this.releaseYear != 'all') {
           return item.release.indexOf(this.releaseYear) != -1 && item.name.indexOf(this.inputText) != -1
