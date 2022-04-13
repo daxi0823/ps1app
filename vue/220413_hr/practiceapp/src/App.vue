@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <p>{{ tasks }}</p>
+    <h1>{{ count }}</h1>
+    <p><button @click="increment()">+</button><button @click="countReset()">Reset</button></p>
+    <ul>
+      <li v-for="task in taskFalseList" :key="task.id">
+        <input type="checkbox" :checked="task.done">
+        {{ task.name }}
+      </li>
+    </ul>
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -10,14 +17,31 @@
 </template>
 
 <script>
-  export default {
-    computed: {
-      tasks() {
-        // storeのstateのtasksを取得する
-        return this.$store.state.tasks
-      }
+export default {
+  computed: {
+    count() {
+      return this.$store.state.count
+    },
+    tasks() {
+      // storeのstateのtasksを取得する
+      return this.$store.state.tasks
+    },
+    taskTrueList() {
+      return this.$store.getters.filteredTaskTrue
+    },
+    taskFalseList() {
+      return this.$store.getters.filteredTaskFalse
+    }
+  },
+  methods: {
+    increment() {
+      this.$store.commit('increment')
+    },
+    countReset() {
+      this.$store.commit('countReset')
     }
   }
+}
 </script>
 
 <style>

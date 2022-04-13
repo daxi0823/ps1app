@@ -2,21 +2,21 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 
-
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  // ココ
+  // vueファイルにとってのdata()部分
   state: {
-    // vueファイルにとってのdata()部分
     tasks: [
-      { id: 1, name: '牛乳を買う', done: false },
-      { id: 2, name: 'Vue.jsの本を買う', done: true }
+      { id: 1, name: '牛乳を買う', dane: false},
+      { id: 2, name: 'Vue.jsの本を買う', done: true}
     ],
     count: 0,
+    items: [],
   },
+  // stateを更新する処理
+  // 変更する処理は全てここで行うが、逆に普通のvueファイル内からデータの変更はできない
   mutations: {
-    // stateを更新する処理
     increment(state) {
       state.count++
     },
@@ -28,8 +28,9 @@ const store = new Vuex.Store({
       state.items = datas
     }
   },
+
+  // 外部APIとのやりとり用
   actions: {
-    // 外部APIとのやりとり用
     fetchItems({ commit, }) {
       return axios.get('https://www.googleapis.com/books/v1/volumes?q=vue')
       .then(response => {
@@ -38,19 +39,21 @@ const store = new Vuex.Store({
       })
     }
   },
+
+  // vueファイルにとってのcomputed or filters部分
   getters: {
-    // vueファイルにとってのcomputed or filters部分
-    filteredTaskTrue(state) {
+    // gettersのメソッドの引数には必ずstateを入れる
+    filterdTaksTrue(state){
       return state.tasks.filter((item) => {
         return item.done === true
       })
     },
-    filteredTaskFalse(state) {
+    filterdTaksFalse(state){
       return state.tasks.filter((item) => {
         return item.done === false
       })
     },
-  }
+  },
 })
 
 export default store
