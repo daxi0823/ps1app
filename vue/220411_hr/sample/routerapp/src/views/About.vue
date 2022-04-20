@@ -10,7 +10,7 @@ export default {
   methods: {
     moveUserPage() {
       this.$router.push({ name: 'user', params: { userId: 123 }})
-      // console.log(this.$router)
+      console.log(this.$router)
     }
   }
 }
